@@ -17,9 +17,9 @@ def download_audio():
             yt.streams.filter(only_audio=True).first().download(filename=uname)
     elif question == 2:
         try:
-            yt.streams.filter(progressive=True, file_extension='mp4').first().download(filename=namevid)
+            yt.streams.filter(progressive=True, file_extension='mp4', res="720p").first().download(filename=namevid)
         except:
-            yt.streams.filter(progressive=True, file_extension='mp4').first().download(filename=unamevid)
+            yt.streams.filter(progressive=True, file_extension='mp4', res="720p").first().download(filename=unamevid)
 
 download_audio()
 download_video()
